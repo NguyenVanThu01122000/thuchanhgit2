@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width>, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./index.css">
+</head>
+<body>
+    <div>
+        <div>
+            <div id="a">nguyen van thu</div>
+            <div id="a"> dam anh tuan</div>
+            <div id="a"> nguyen thi thuy chang</div>
+        </div>
+        <label for="password">Password</label>
+        <input type="password" name="password" id="password" required>
+
+       <p class=" thanhpho1">Emai:</p>
+       <input id="email" type="text" name="Emai" value="" placeholder="vui long nhap Email" required>
+       
+       <p" >Thành Phố</p>
+       <select name="thanhpho" id="thanhpho">
+            <option value="">CHON THANH PHO</option>
+            <option value="hanoi">Thành phố hà nội</option>
+            <option value="thaibinh">Thành phố thái bình</option>
+            <option value="hochiminh">Thành phố hồ chí minh</option>
+       </select>
+
+       <p>Gioi tinh</p>
+       <input type="radio" name="gender" value="nam" id="nam">Nam
+       <input type="radio" name="gender" value="nu" id="nu">Nu
+
+       <p>Sở thich</p>
+       <input type="checkbox" name="caulong" value="caulong" id="caulong"> Cau long
+       <input type="checkbox" name="bongda" value="bongda" id="bongda"> Bong da
+
+       <br />
+       <input type="submit" value="Gửi dữ liệu" onclick="handleSubmit()"/>
+       
+    </div>
+
+    <div id="text1" >
+        <p>123</p>
+    </div>
+
+    <div class="text2">Text2</div>
+
+  <button onclick="handleClick()">Click vao day</button>
+   <script src="./index.js">
+    document.getElementById('a').classList.add('font-size')
+    function handleClick(){
+        document.getElementsByTagName('p')[0].innerText = '111111'
+        
+    }
+
+        function handleSubmit(e){
+            let emailValue = document.getElementById('email').value;
+            let password = document.getElementById('password').value;
+
+            let thanhpho = document.getElementById('thanhpho').value;
+
+            let namChecked = document.getElementById('nam').checked;
+
+            let nuChecked = document.getElementById('nu').checked;
+
+            let caulongChecked = document.getElementById('caulong').checked;
+
+            let bongChecked = document.getElementById('bongda').checked;
+
+            let str = "";
+
+            if(caulongChecked){
+                str += 'cau long'
+            }
+
+            if(bongChecked){
+                str += ', bong da';
+            }
+
+            alert(str);
+
+
+
+        }
+   </script>
+</body>
+</html>
